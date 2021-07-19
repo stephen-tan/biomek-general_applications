@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Applications</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
+    <script src='../static/assets/js/jquery-3.6.0.min.js'></script>
+    <script src='../static/assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src="../static/jqueryFunctions.js"></script>
+
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Stamp - 96 to 96</h1>
+        <br>
+        <!-- Add a button to activate General Applications method -->
+        <p><a class="btn btn-primary btn-lg" style="background-color: green; border-color: black;"
+                href="../static/js/setVariables.js" role="button">Start Run</a></p>
+    </div>
+
+    <div class="container">
+        <img src="images/Stamp - 96 to 96.png" class="img-fluid center-block" style="max-width: 50%"
+            alt="Stamp - 96 to 96">
+    </div>
+
+    <br>
+
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <button class="tablink" onclick="openPage('Basic', this, '#0098ce')" id="defaultOpen">Basic</button>
+            </li>
+            <li class="nav-item">
+                <button class="tablink" onclick="openPage('Advanced', this, '#0098ce')">Advanced</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container tabcontent" id="Basic">
+        <p>Please select from the <u><b>required</b></u> parameters below</p>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3>Labware Settings</h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label id="sourceType">Source Plate Type<br>
+                            <select name="sourceType" BFXName="Let.sourceType" id=dropdown>
+                                <Option selected value="Deep96C">96 Corning Deep Well 2.0mL</Option>
+                                <Option value="PCR96">96 BioRad PCR Skirted 200uL</Option>
+                                <Option value="PCR96_rack">96 VWR PCR No-Skirt on Adapter 200uL</Option>
+                                <Option value="Nunc_96round">96 (Qpix) Nunc Shallow Well 300uL</Option>
+                                <Option value="BlackClearBottom96Flat">96 Corning Black/Clear Flat Bottom 300uL</Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="srcWellVolume">Source Well Volume<br>
+                            <input type="text" style="text-align: center;" name="srcWellVolume" BFXName="Let.srcWellVolume"
+                                value="2000" min="0" max="2000">
+                            </input>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="destinationType">Destination Plate Type<br>
+                            <select name="destinationType" BFXName="Let.destinationType" id=dropdown>
+                                <Option value="Deep96C">96 Corning Deep Well 2.0mL</Option>
+                                <Option value="PCR96">96 BioRad PCR Skirted 200uL</Option>
+                                <Option value="PCR96_rack">96 VWR PCR No-Skirt on Adapter 200uL</Option>
+                                <Option value="Nunc_96round">96 (Qpix) Nunc Shallow Well 300uL</Option>
+                                <Option value="BlackClearBottom96Flat">96 Corning Black/Clear Flat Bottom 300uL
+                                </Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="tipType">Tip Type<br>
+                            <select name="tipType" BFXName="Let.tipType" id=dropdown>
+                                <Option value="f200">f200</Option>
+                                <Option selected value="s200">s200</Option>
+                            </select>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Transfer Settings</h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label id="numStamps">Number of Unique Stamps<br>
+                            <select name="numStamps" BFXName="Let.numStamps" id=dropdown>
+                                <Option selected value="1">1</Option>
+                                <Option value="2">2</Option>
+                                <Option value="3">3</Option>
+                                <Option value="4">4</Option>
+                                <Option value="5">5</Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="stampVol">Stamp Volume<br>
+                            <input type="text" style="text-align: center;" name="sourceType" BFXName="Let.stampVol"
+                                value="0" min="0" max="2000">
+                            </input>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container tabcontent" id="Advanced">
+        <p>Please select from the <i><b>optional</b></i> pipetting parameters below</p>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3>Aspirate Settings</h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label id="aspirateHeight">Aspirate Height <small>(mm from well bottom)</small><br>
+                            <select name="aspirateHeight" BFXName="Let.aspirateHeight" id=aspirateHeight>
+                                <Option selected value="0.5">0.5</Option>
+                                <Option value="1.0">1.0</Option>
+                                <Option value="1.5">1.5</Option>
+                                <Option value="2.0">2.0</Option>
+                                <Option value="2.5">2.5</Option>
+                                <Option value="3.0">3.0</Option>
+                                <Option value="3.5">3.5</Option>
+                                <Option value="4.0">4.0</Option>
+                                <Option value="4.5">4.5</Option>
+                                <Option value="5.0">5.0</Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="changeTips">Change Tips <small>(new tips for every transfer)</small><br>
+                            <select name="changeTips" BFXName="Let.changeTips" id=changeTips>
+                                <Option selected value="Yes">Yes</Option>
+                                <Option value="No">No</Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="aspirateMixVol">Aspirate Mix Volume<br>
+                            <input type="text" style="text-align: center;" name="aspirateMixVol"
+                                BFXName="Let.aspirateMixVol" value="0" min="0" max="200">
+                            </input>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="aspirateMixCount">Aspirate Mix Count<br>
+                            <input type="text" style="text-align: center;" name="aspirateMixCount"
+                                BFXName="Let.aspirateMixCount" value="0" min="0" max="50">
+                            </input>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Dispense Settings</h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label id="dispenseHeight">Dispense Height <small>(mm from well bottom)</small><br>
+                            <select name="dispenseHeight" BFXName="Let.dispenseHeight" id=dispenseHeight>
+                                <Option selected value="0.5">0.5</Option>
+                                <Option value="1.0">1.0</Option>
+                                <Option value="1.5">1.5</Option>
+                                <Option value="2.0">2.0</Option>
+                                <Option value="2.5">2.5</Option>
+                                <Option value="3.0">3.0</Option>
+                                <Option value="3.5">3.5</Option>
+                                <Option value="4.0">4.0</Option>
+                                <Option value="4.5">4.5</Option>
+                                <Option value="5.0">5.0</Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="technique">Sterile Dispense <small>(dispense at top of plate)</small><br>
+                            <select name="technique" BFXName="Let.technique" id=technique>
+                                <Option value="Water Sterile Dispense">Yes</Option>
+                                <Option selected value="Water Wet Dispense">No</Option>
+                            </select>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="dispenseMixVol">Dispense Mix Volume<br>
+                            <input type="text" style="text-align: center;" name="dispenseMixVol"
+                                BFXName="Let.dispenseMixVol" value="0" min="0" max="200">
+                            </input>
+                        </label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <label id="dispenseMixCount">Dispense Mix Count<br>
+                            <input type="text" style="text-align: center;" name="dispenseMixCount"
+                                BFXName="Let.dispenseMixCount" value="0" min="0" max="50">
+                            </input>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script language="javascript">
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+    <script language="javascript">
+        function SetVariable() {
+
+            // get the element ID for a specific variable and then grab its value
+
+            // Labware Settings
+            var sourceTypeValue = document.getElementById("sourceType").value;
+            var srcWellVolumeValue = document.getElementById("srcWellVolume").value;
+            var destinationTypeValue = document.getElementById("destinationType").value;
+            var tipTypeValue = document.getElementById("tipType").value;
+
+            // Transfer Settings
+            var numStampsValue = document.getElementById("numStamps").value;
+            var stampVolValue = document.getElementById("stampVol").value;
+            console.log(`Transfer volume is ${stampVolValue}`)
+
+            // Aspirate Settings
+            var aspirateHeightValue = document.getElementById("aspirateHeight").value;
+            var changeTipsValue = document.getElementById("changeTips").value;
+            var aspirateMixVolValue = document.getElementById("aspirateMixVol").value;
+            var aspirateMixCountValue = document.getElementById("aspirateMixCount").value;
+
+            // Dispense Settings
+            var dispenseHeightValue = document.getElementById("dispenseHeight").value;
+            var techniqueValue = document.getElementById("technique").value;
+            var dispenseMixVolValue = document.getElementById("dispenseMixVol").value;
+            var dispenseMixCountValue = document.getElementById("dispenseMixCount").value;
+        }
+    </script>
+
+</body>
+
+</html>
