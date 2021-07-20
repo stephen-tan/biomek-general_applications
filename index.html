@@ -32,15 +32,15 @@
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <button class="tablink" onclick="openPage('Basic', this, '#0098ce')" id="defaultOpen">Basic</button>
+                <button class="tablink" onclick="openPage('Required', this, '#0098ce')" id="defaultOpen">Required</button>
             </li>
             <li class="nav-item">
-                <button class="tablink" onclick="openPage('Advanced', this, '#0098ce')">Advanced</button>
+                <button class="tablink" onclick="openPage('Optional', this, '#0098ce')">Optional</button>
             </li>
         </ul>
     </div>
 
-    <div class="container tabcontent" id="Basic">
+    <div class="container tabcontent" id="Required">
         <p>Please select from the <u><b>required</b></u> parameters below</p>
 
         <div class="row">
@@ -128,7 +128,7 @@
 
     </div>
 
-    <div class="container tabcontent" id="Advanced">
+    <div class="container tabcontent" id="Optional">
         <p>Please select from the <i><b>optional</b></i> pipetting parameters below</p>
 
         <div class="row">
@@ -235,7 +235,9 @@
     </div>
 
     <script src="../static/jqueryFunctions.js"></script>
+    <script src="../static/jqueryFunctions.js"></script>
 
+    <!-- Create tabs for the required and optional parameters -->
     <script language="javascript">
         function openPage(pageName, elmnt, color) {
             var i, tabcontent, tablinks;
@@ -253,36 +255,6 @@
 
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
-    </script>
-
-    <script language="javascript">
-        function SetVariable() {
-
-            // get the element ID for a specific variable and then grab its value
-
-            // Labware Settings
-            var sourceTypeValue = document.getElementById("sourceType").value;
-            var srcWellVolumeValue = document.getElementById("srcWellVolume").value;
-            var destinationTypeValue = document.getElementById("destinationType").value;
-            var tipTypeValue = document.getElementById("tipType").value;
-
-            // Transfer Settings
-            var numStampsValue = document.getElementById("numStamps").value;
-            var stampVolValue = document.getElementById("stampVol").value;
-            console.log(`Transfer volume is ${stampVolValue}`)
-
-            // Aspirate Settings
-            var aspirateHeightValue = document.getElementById("aspirateHeight").value;
-            var changeTipsValue = document.getElementById("changeTips").value;
-            var aspirateMixVolValue = document.getElementById("aspirateMixVol").value;
-            var aspirateMixCountValue = document.getElementById("aspirateMixCount").value;
-
-            // Dispense Settings
-            var dispenseHeightValue = document.getElementById("dispenseHeight").value;
-            var techniqueValue = document.getElementById("technique").value;
-            var dispenseMixVolValue = document.getElementById("dispenseMixVol").value;
-            var dispenseMixCountValue = document.getElementById("dispenseMixCount").value;
-        }
     </script>
 
 </body>
