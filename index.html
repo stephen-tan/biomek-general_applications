@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
     <script src='../static/assets/js/jquery-3.6.0.min.js'></script>
     <script src='../static/assets/bootstrap/js/bootstrap.min.js'></script>
-    <script src="../static/jqueryFunctions.js"></script>
 
 </head>
 
@@ -24,7 +23,7 @@
     </div>
 
     <div class="container">
-        <img src="images/Stamp - 96 to 96.png" class="img-fluid center-block" style="max-width: 50%"
+        <img src="images/Stamp - 96 to 96.png" id="methodImage" class="img-fluid center-block" style="max-height: 200px"
             alt="Stamp - 96 to 96">
     </div>
 
@@ -53,8 +52,8 @@
                     <li class="list-group-item">
                         <label id="sourceType">Source Plate Type<br>
                             <select name="sourceType" BFXName="Let.sourceType" id=dropdown>
-                                <Option selected value="Deep96C">96 Corning Deep Well 2.0mL</Option>
-                                <Option value="PCR96">96 BioRad PCR Skirted 200uL</Option>
+                                <Option value="Deep96C">96 Corning Deep Well 2.0mL</Option>
+                                <Option selected value="PCR96">96 BioRad PCR Skirted 200uL</Option>
                                 <Option value="PCR96_rack">96 VWR PCR No-Skirt on Adapter 200uL</Option>
                                 <Option value="Nunc_96round">96 (Qpix) Nunc Shallow Well 300uL</Option>
                                 <Option value="BlackClearBottom96Flat">96 Corning Black/Clear Flat Bottom 300uL</Option>
@@ -74,7 +73,7 @@
                         <label id="destinationType">Destination Plate Type<br>
                             <select name="destinationType" BFXName="Let.destinationType" id=dropdown>
                                 <Option value="Deep96C">96 Corning Deep Well 2.0mL</Option>
-                                <Option value="PCR96">96 BioRad PCR Skirted 200uL</Option>
+                                <Option selected value="PCR96">96 BioRad PCR Skirted 200uL</Option>
                                 <Option value="PCR96_rack">96 VWR PCR No-Skirt on Adapter 200uL</Option>
                                 <Option value="Nunc_96round">96 (Qpix) Nunc Shallow Well 300uL</Option>
                                 <Option value="BlackClearBottom96Flat">96 Corning Black/Clear Flat Bottom 300uL
@@ -105,11 +104,11 @@
                     <li class="list-group-item">
                         <label id="numStamps">Number of Unique Stamps<br>
                             <select name="numStamps" BFXName="Let.numStamps" id=dropdown>
-                                <Option selected value="1">1</Option>
+                                <Option value="1">1</Option>
                                 <Option value="2">2</Option>
                                 <Option value="3">3</Option>
                                 <Option value="4">4</Option>
-                                <Option value="5">5</Option>
+                                <Option selected value="5">5</Option>
                             </select>
                         </label>
                     </li>
@@ -234,6 +233,8 @@
         </div>
 
     </div>
+
+    <script src="../static/jqueryFunctions.js"></script>
 
     <script language="javascript">
         function openPage(pageName, elmnt, color) {

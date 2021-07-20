@@ -1,33 +1,21 @@
 // Execute functions once the application is fully loaded
 $(document).ready(function() {
 
-    // function filterOptions(id) {
-    //     var allOptions = $('#selectprod option')
-    //     $('#selectcat').change(function () {
-    //     $('#selectprod option').remove(); //remove all options
-    //     var classN = $('#selectcat option:selected').prop('class'); //get the 
-    //     var opts = allOptions.filter('.' + classN); //selected option's classname
-    //     $.each(opts, function (i, j) {
-    //         $(j).appendTo('#selectprod'); //append those options back
-    //     });
-    // });
-    // };
-
     // Auto-fill source well volume and filter compatible tip types based on source type
-    $('#sourceType').on('change', function() {
+    $('#sourceType, #destinationType').on('change', function() {
 
-        // Get value of the sourceType selected and log it to the console
+        // get value of the sourceType and destinationType selected and log it to the console
         var sourceType = $('#sourceType').find(':selected').text();
+        var destinationType = $('#destinationType').find(':selected').text();
         console.log(`New source labware selected: ${sourceType}`);
 
-        // if the selected source type matches the text (not the value) in the dropdown
+        // if the selected source or destination type matches the text (not the value) in the dropdown
         // then set the value of the srcWellVolume ID to the maximum well volume
         // and show the available tip types
         // if the plate type is anything but a deep well plate, then show all tip types
-        if (sourceType == "96 Corning Deep Well 2.0mL") {
+        if (sourceType == "96 Corning Deep Well 2.0mL" || destinationType == "96 Corning Deep Well 2.0mL") {
             $('#srcWellVolume input').val(2000);
             $('#tipType option').filter('[value="f20"], [value="s20"]').hide();
-            // $('#tipType option[value="s20"]').remove();
         }
         else if (sourceType == "96 BioRad PCR Skirted 200uL") {
             $('#srcWellVolume input').val(200);
@@ -47,6 +35,33 @@ $(document).ready(function() {
         }
 
     });
+
+    // Dynamically update the method image based on the number of plates
+    $('#numStamps').on('change', function() {
+
+        console.log("in section");
+
+        var imageNumber = $('#numStamps option:selected').val();
+        console.log(imageNumber);
+        
+        if (imageNumber == "5") {
+            $('#methodImage').attr('src', 'images/5 Stamp - 96 to 96.png');
+        }
+        else if (imageNumber == "4") {
+            $('#methodImage').attr('src', 'images/4 Stamp - 96 to 96.png');
+        }
+        else if (imageNumber == "3") {
+            $('#methodImage').attr('src', 'images/3 Stamp - 96 to 96.png');
+        }
+        else if (imageNumber == "2") {
+            $('#methodImage').attr('src', 'images/2 Stamp - 96 to 96.png');
+        }
+        else if (imageNumber == "1") {
+            $('#methodImage').attr('src', 'images/1 Stamp - 96 to 96.png');
+        }
+    });
+
+    // Auto-update the method image based on the number of unique transfers specified
 
     // $('#destinationType').on('change', function() {
     //     if (destinationType == "96 Corning Deep Well 2.0mL") {
