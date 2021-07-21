@@ -48,9 +48,14 @@ showSelectedParameters.on('click', function() {
 
         var searchParameter = "#" + variableName;
 
-        var variableValue = $(searchParameter).find(':selected').val();
-        var variableValue = $(searchParameter).find('input').val();
+        var dropdownSearch = $(searchParameter).find(':selected').val();
         
+        if (typeof dropdownSearch !== "undefined") {
+            var variableValue = $(searchParameter).find(':selected').val();
+        }
+        else {
+            var variableValue = $(searchParameter).find('input').val();
+        }
 
         console.log(`${variableName}: ${variableValue}`);
     };
