@@ -8,13 +8,16 @@ $(document).ready(function() {
         var sourceType = $('#sourceType').find(':selected').text();
         var destinationType = $('#destinationType').find(':selected').text();
         console.log(`New source labware selected: ${sourceType}`);
+        console.log(`New destination labware selected: ${destinationType}`);
 
         // if the selected source or destination type matches the text (not the value) in the dropdown
         // then set the value of the srcWellVolume ID to the maximum well volume
         // and show the available tip types
         // if the plate type is anything but a deep well plate, then show all tip types
         if (sourceType == "96 Corning Deep Well 2.0mL" || destinationType == "96 Corning Deep Well 2.0mL") {
-            $('#srcWellVolume input').val(2000);
+            if (sourceType == "96 Corning Deep Well 2.0mL") {
+                $('#srcWellVolume input').val(2000);
+            }
             $('#tipType option').filter('[value="f20"], [value="s20"]').hide();
         }
         else if (sourceType == "96 BioRad PCR Skirted 200uL") {
@@ -39,8 +42,6 @@ $(document).ready(function() {
     // Dynamically update the method image based on the number of plates
     $('#numStamps').on('change', function() {
 
-        console.log("in section");
-
         var imageNumber = $('#numStamps option:selected').val();
         console.log(imageNumber);
         
@@ -61,26 +62,23 @@ $(document).ready(function() {
         }
     });
 
-    // Auto-update the method image based on the number of unique transfers specified
+    // Validate the stamp volume based on the labware, source well volume, and number of unique stamps
+    $('#stampVol').on('change', function() {
 
-    // $('#destinationType').on('change', function() {
-    //     if (destinationType == "96 Corning Deep Well 2.0mL") {
-    //         $('#tipType option').filter('[value="f20"], [value="s20"]').hide();
-    //     }
-    //     else if (sourceType == "96 BioRad PCR Skirted 200uL" || destinationType == "96 BioRad PCR Skirted 200uL") {
-    //         $('#tipType option').filter('[value="f50"], [value="s50"]').hide();
-    //     }
-    //     else if (sourceType == "96 VWR PCR No-Skirt on Adapter 200uL" || destinationType == "96 VWR PCR No-Skirt on Adapter 200uL") {
-    //         // $('#srcWellVolume input').val(200);
-    //         console.log("test 96 VWR PCR No-Skirt on Adapter 200uL");
-    //     }
-    //     else if (sourceType == "96 (Qpix) Nunc Shallow Well 300uL" || destinationType == "96 (Qpix) Nunc Shallow Well 300uL") {
-    //         console.log("test 96 (Qpix) Nunc Shallow Well 300uL");
-    //     }
-    //     else if (sourceType == "96 Corning Black/Clear Flat Bottom 300uL" || destinationType == "96 Corning Black/Clear Flat Bottom 300uL") {
-    //         console.log("test 96 Corning Black/Clear Flat Bottom 300uL");
-    //     }
+        // Get the available transfer volume amount
+        var availableTransferVolume = $('#srcWellVolume input').val();
+        console.log(`${availableTransferVolume} available for transfer`);
 
-    // });
+        // Calculate the total possible transfer volume
+        var desiredTransferVolume = $('#stampVol input').val() * $('#numStamps option:selected').val();
+        console.log(`${desiredTransferVolume} attempted to transfer`);
 
+        // Check if the stamp volume exceeds the destination well maximum volume
+        if (desiredTransferVolume > availableTransferVolume) {
+            console.log(`There is ${desiredTransferVolume - availableTransferVolume}uL too little volume`);
+        }
+        else if (desiredTransferVolume <= availableTransferVolume) {
+            console.log(`There will be ${availableTransferVolume - desiredTransferVolume}uL left in the source wells`);
+        }
+    });
 });
