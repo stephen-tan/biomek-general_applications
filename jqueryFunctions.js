@@ -63,7 +63,11 @@ $(document).ready(function() {
     });
 
     // Validate the stamp volume based on the labware, source well volume, and number of unique stamps
-    $('#stampVol').on('change', function() {
+    $('#stampVol, #srcWellVolume').on('change', function() {
+
+        // Select the elements
+        const stampVolID = document.querySelector('#stampVol');
+        const jumbotronID = document.querySelector('.jumbotron');
 
         // Get the available transfer volume amount
         var availableTransferVolume = $('#srcWellVolume input').val();
@@ -74,11 +78,55 @@ $(document).ready(function() {
         console.log(`${desiredTransferVolume} attempted to transfer`);
 
         // Check if the stamp volume exceeds the destination well maximum volume
+        // If the desired transfer cannot be completed then show an error message and change the background color
         if (desiredTransferVolume > availableTransferVolume) {
             console.log(`There is ${desiredTransferVolume - availableTransferVolume}uL too little volume`);
+            stampVolID.style.color = '#e06666ff'; // red
+            jumbotronID.style.background = '#e06666ff'; // red
+            // $('#startRun').hide();
+            // $('#downloadCSV').hide();
+            alert("ERROR: Not enough volume to complete transfer");
         }
         else if (desiredTransferVolume <= availableTransferVolume) {
             console.log(`There will be ${availableTransferVolume - desiredTransferVolume}uL left in the source wells`);
+            stampVolID.style.color = 'black';
+            jumbotronID.style.background = '#93c47dff'; // green
+            // $('#startRun').show();
+            // $('#downloadCSV').show();
         }
     });
+
+    // Create a variable to hold the name of the labware search
+    var labwareSearchName = "96 (Qpix) Nunc Shallow Well 300uL";
+
+    // Create an empty object that will hold the JS object once the search term is found
+    var labwareObject = {};
+
+    // Create a boolean that will break out of the for loop once the search term is found
+    var labwareFound = false;
+
+    // Get a response from the labware.json file and loop through all objects in the array
+    var labwareResponseJSON = $.getJSON('labware.json', function(response) {
+        
+        console.log(response); // returns two arrays of objects -- one for labware and another for tips
+
+        // Loop through all objects in the labware array
+        for(var i = 0; i < response.labware.length; i++) {
+
+            // If the General Applications gaName matches the labware name we are looking for
+            // Then change the boolean to true and store the entire object to the labwareObject variable
+            // Break out of the loop once the search is found
+            if (response.labware[i].gaName === labwareSearchName) {
+                labwareFound = true;
+                console.log(response.labware[i].gaName + " found!");
+                labwareObject = response.labware[i];
+                break;
+            };
+        };
+
+        // Print the object that matched out search term to the console
+        console.log(labwareObject);
+
+    });
+
 });

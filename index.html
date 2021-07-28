@@ -19,10 +19,8 @@
         <br>
         <!-- Add a button to activate General Applications method -->
         <!-- href="../static/generateCSV.js" -->
-        <p><a class="btn btn-primary btn-lg" style="background-color: green; border-color: black;"
-            role="submit">Start Run</a></p>
-        <button id="downloadCSV" type="button" class="btn btn-primary btn-lg" type="submit" value="submit">Download CSV</button>
-
+        <button id="startRun" type="button" class="btn btn-primary btn-lg" style="background-color: gray; border-color: black;" type="submit" value="submit">Start Run</button>
+        <button id="downloadCSV" type="button" class="btn btn-primary btn-lg" style="background-color: gray; border-color: black;" type="submit" value="submit">Download CSV</button>
     </div>
 
     <div class="container">
@@ -35,14 +33,14 @@
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <button class="tablink" onclick="openPage('Required', this, '#0098ce')" id="defaultOpen">Required</button>
+                <button class="tablink" onclick="openPage('Required', this, '#6d9eebff')" id="defaultOpen">Required</button>
             </li>
             <li class="nav-item">
-                <button class="tablink" onclick="openPage('Optional', this, '#0098ce')">Optional</button>
+                <button class="tablink" onclick="openPage('Optional', this, '#6d9eebff')">Optional</button>
             </li>
         </ul>
     </div>
-
+    
     <form method="post" action="">
 
         <div class="container tabcontent" id="Required">
@@ -69,7 +67,7 @@
                         <li class="list-group-item">
                             <label id="srcWellVolume">Source Well Volume (uL)<br>
                                 <input type="text" style="text-align: center;" name="srcWellVolume" BFXName="Let.srcWellVolume"
-                                    value="2000" min="0" max="2000">
+                                    value="200" min="0" max="2000">
                                 </input>
                             </label>
                         </li>
@@ -174,6 +172,23 @@
                                 </input>
                             </label>
                         </li>
+
+                        <li class="list-group-item">
+                            <label id="aspirateMixHeight">Aspirate Mix Height <small>(mm from well bottom)</small><br>
+                                <select name="aspirateMixHeight" BFXName="Let.aspirateMixHeight" id=aspirateMixHeight>
+                                    <Option selected value=0.5>0.5</Option>
+                                    <Option value=1.0>1.0</Option>
+                                    <Option value=1.5>1.5</Option>
+                                    <Option value=2.0>2.0</Option>
+                                    <Option value=2.5>2.5</Option>
+                                    <Option value=3.0>3.0</Option>
+                                    <Option value=3.5>3.5</Option>
+                                    <Option value=4.0>4.0</Option>
+                                    <Option value=4.5>4.5</Option>
+                                    <Option value=5.0>5.0</Option>
+                                </select>
+                            </label>
+                        </li>
     
                         <li class="list-group-item">
                             <label id="aspirateMixCount">Aspirate Mix Count<br>
@@ -220,6 +235,23 @@
                                 <input type="text" style="text-align: center;" name="dispenseMixVol"
                                     BFXName="Let.dispenseMixVol" value="0" min="0" max="200">
                                 </input>
+                            </label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <label id="dispenseMixHeight">Dispense Mix Height <small>(mm from well bottom)</small><br>
+                                <select name="dispenseMixHeight" BFXName="Let.dispenseMixHeight" id=dispenseMixHeight>
+                                    <Option selected value=0.5>0.5</Option>
+                                    <Option value=1.0>1.0</Option>
+                                    <Option value=1.5>1.5</Option>
+                                    <Option value=2.0>2.0</Option>
+                                    <Option value=2.5>2.5</Option>
+                                    <Option value=3.0>3.0</Option>
+                                    <Option value=3.5>3.5</Option>
+                                    <Option value=4.0>4.0</Option>
+                                    <Option value=4.5>4.5</Option>
+                                    <Option value=5.0>5.0</Option>
+                                </select>
                             </label>
                         </li>
     
