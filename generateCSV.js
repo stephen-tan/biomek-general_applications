@@ -60,14 +60,17 @@ downloadCSV.on('click', function() {
     };
 
     // Once all the information has been entered as a string with newling \n characters,
-    // Create an element which will hold the downloadable CSV file
-    var csv = document.createElement('a');
+    // Create elements which will hold the downloadable CSV file and another that will be for the Biomek
+    var biomekCSV = document.createElement('a');
+    var logCSV = document.createElement('a');
 
     // Add the CSV content to the actual CSV object
-    csv.href = "data:text/csv;charset=utf-8," + encodeURI(csvContent);
+    biomekCSV.href = "data:text/csv;charset=utf-8," + encodeURI(csvContent);
+    logCSV.href = "data:text/csv;charset=utf-8," + encodeURI(csvContent);
 
     // Open the downloadable file in the window or tab
-    csv.target = 'blank';
+    biomekCSV.target = 'blank';
+    logCSV.target = 'blank';
 
     // Get the local date and time
     // Format date as YYYY-MM-DD
@@ -82,9 +85,11 @@ downloadCSV.on('click', function() {
     var filename = "GenApps_" + date + "_" + time + ".csv";
 
     // When the file is downloaded, assign a particular name
-    csv.download = filename;
+    biomekCSV.download = "BiomekParameters";
+    logCSV.download = filename;
     
     // Trigger the download when the specific button is clicked
-    csv.click();
+    biomekCSV.click();
+    logCSV.click();
 
 });
