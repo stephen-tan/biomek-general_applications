@@ -96,37 +96,36 @@ $(document).ready(function() {
         }
     });
 
-    // Create a variable to hold the name of the labware search
-    var labwareSearchName = "96 (Qpix) Nunc Shallow Well 300uL";
+    // ---------------- JSON ------------------
+    // // Create a variable to hold the name of the labware search
+    // var labwareSearchName = "96 (Qpix) Nunc Shallow Well 300uL";
 
-    // Create an empty object that will hold the JS object once the search term is found
-    var labwareObject = {};
+    // // Create an empty object that will hold the JS object once the search term is found
+    // var labwareObject = {};
 
-    // Create a boolean that will break out of the for loop once the search term is found
-    var labwareFound = false;
+    // // Create a boolean that will break out of the for loop once the search term is found
+    // var labwareFound = false;
 
-    // Get a response from the labware.json file and loop through all objects in the array
-    var labwareResponseJSON = $.getJSON('labware.json', function(response) {
-        
-        console.log(response); // returns two arrays of objects -- one for labware and another for tips
+    // // Get a response from the labware.json file and loop through all objects in the array
+    // var labwareResponseJSON = $.getJSON('labware.json', function(response) {
 
-        // Loop through all objects in the labware array
-        for(var i = 0; i < response.labware.length; i++) {
+    //     // Loop through all objects in the labware array
+    //     for(var i = 0; i < response.labware.length; i++) {
 
-            // If the General Applications gaName matches the labware name we are looking for
-            // Then change the boolean to true and store the entire object to the labwareObject variable
-            // Break out of the loop once the search is found
-            if (response.labware[i].gaName === labwareSearchName) {
-                labwareFound = true;
-                console.log(response.labware[i].gaName + " found!");
-                labwareObject = response.labware[i];
-                break;
-            };
-        };
+    //         // If the General Applications gaName matches the labware name we are looking for
+    //         // Then change the boolean to true and store the entire object to the labwareObject variable
+    //         // Break out of the loop once the search is found
+    //         if (response.labware[i].gaName === labwareSearchName) {
+    //             labwareFound = true;
+    //             console.log(response.labware[i].gaName + " found!");
+    //             labwareObject = response.labware[i];
+    //             break;
+    //         };
+    //     };
 
-        // Print the object that matched out search term to the console
-        console.log(labwareObject);
+    //     // Print the object that matched out search term to the console
+    //     console.log(labwareObject);
 
-    });
+    // });
 
 });

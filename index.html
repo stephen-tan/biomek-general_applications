@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
     <script src='../static/assets/js/jquery-3.6.0.min.js'></script>
     <script src='../static/assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src="../static/assets/js/d3.min.js"></script>
 
 </head>
 
@@ -37,6 +38,9 @@
             </li>
             <li class="nav-item">
                 <button class="tablink" onclick="openPage('Optional', this, '#6d9eebff')">Optional</button>
+            </li>
+            <li class="nav-item">
+                <input type=file id="uploadedCSV" accept=".csv, .xls, .xslx">
             </li>
         </ul>
     </div>
@@ -298,5 +302,6 @@
 
 <script src="../static/jqueryFunctions.js"></script>
 <script src="../static/generateCSV.js"></script>
+<script src="../static/uploadCSV.js"></script>
 
 </html>
