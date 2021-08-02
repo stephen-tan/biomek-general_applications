@@ -1,0 +1,114 @@
+{
+    "labware": [
+        {
+            "biomekName":"Res",
+            "gaName":"1 Agilent Deep Reservoir 250mL",
+            "numWells":1,
+            "maxVolume":275000,
+            "deadVolume":25000,
+            "compatibleTips":["f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"Res_low",
+            "gaName":"1 Agilent Shallow Reservoir 80mL",
+            "numWells":1,
+            "maxVolume":80000,
+            "deadVolume":25000,
+            "compatibleTips":["f50","s50","f200","s200"] 
+        },
+        {
+            "biomekName":"PCR384",
+            "gaName":"384 BioRad PCR Skirted 40uL",
+            "numWells":384,
+            "maxVolume":40,
+            "deadVolume":2,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"EchoPP",
+            "gaName":"384 Echo 65uL",
+            "numWells":384,
+            "maxVolume":65,
+            "deadVolume":15,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"Nunc_96round",
+            "gaName":"96 (Qpix) Nunc Shallow Well 300uL",
+            "numWells":96,
+            "maxVolume":317,
+            "deadVolume":5,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"NUNC_U_BOTTOM",
+            "gaName":"96 (Qpix) Nunc Shallow Well 300uL",
+            "numWells":96,
+            "maxVolume":317,
+            "deadVolume":5,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"PCR96",
+            "gaName":"96 BioRad PCR Skirted 200uL",
+            "numWells":96,
+            "maxVolume":230,
+            "deadVolume":5,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"PCR96_rack",
+            "gaName":"96 VWR PCR No-Skirt on Adapter 200uL",
+            "numWells":96,
+            "maxVolume":230,
+            "deadVolume":5,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        },
+        {
+            "biomekName":"BlackClearBottom96Flat",
+            "gaName":"96 Corning Black/Clear Flat Bottom 300uL",
+            "numWells":96,
+            "maxVolume":360,
+            "deadVolume":10,
+            "compatibleTips":["f20","s20","f50","s50","f200","s200"]
+        }
+    ],
+    "tips" : [
+        {
+            "tipName":"f20",
+            "tipCapacity":40,
+            "minVolume":4,
+            "maxVolume":36
+        },
+        {
+            "tipName":"s20",
+            "tipCapacity":80,
+            "minVolume":4,
+            "maxVolume":72
+        },
+        {
+            "tipName":"f50",
+            "tipCapacity":50,
+            "minVolume":5,
+            "maxVolume":45
+        },
+        {
+            "tipName":"s50",
+            "tipCapacity":90,
+            "minVolume":5,
+            "maxVolume":81
+        },
+        {
+            "tipName":"f200",
+            "tipCapacity":150,
+            "minVolume":15,
+            "maxVolume":135
+        },
+        {
+            "tipName":"s200",
+            "tipCapacity":190,
+            "minVolume":15,
+            "maxVolume":171
+        }
+    ]
+}
