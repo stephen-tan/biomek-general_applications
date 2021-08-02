@@ -1,6 +1,11 @@
 // Execute functions once the application is fully loaded
 $(document).ready(function() {
 
+    // Refresh the page if the Clear Parameters button is clicked
+    $('#clearParameters').click(function() {
+        location.reload();
+    });
+
     // Auto-fill source well volume and filter compatible tip types based on source type
     $('#sourceType, #destinationType').on('change', function() {
 
