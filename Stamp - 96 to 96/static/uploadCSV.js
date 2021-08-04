@@ -87,9 +87,14 @@ $(document).ready(function() {
 
                 var id = parametersArray[i].Variable;
                 var textValue = parametersArray[i].Value;
-                console.log(textValue);
+
+                console.log(`${id}: ${textValue}`);
                 if (selectArray.includes(id)) {
                     $('#' + id + ' select option[value="' + textValue + '"]').attr('selected', 'selected')
+                    if (id == "numStamps") {
+                        // Since the value is set programmatically, manually trigger an event change
+                        $('#numStamps').trigger("change");
+                    };
                 }
                 else if (inputArray.includes(id)) {
                     $('#' + id + ' input').val(parametersArray[i].Value);
@@ -102,3 +107,5 @@ $(document).ready(function() {
     };
 
 });
+
+// https://www.programmersought.com/article/40435121957/

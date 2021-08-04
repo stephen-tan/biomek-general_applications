@@ -1,6 +1,7 @@
 // Execute functions once the application is fully loaded
 $(document).ready(function() {
 
+
     // Refresh the page if the Clear Parameters button is clicked
     $('#clearParameters').click(function() {
         location.reload();
@@ -44,28 +45,31 @@ $(document).ready(function() {
 
     });
 
+    
+
     // Dynamically update the method image based on the number of plates
     $('#numStamps').on('change', function() {
 
         var imageNumber = $('#numStamps option:selected').val();
-        console.log(imageNumber);
+        console.log(`${imageNumber} unique transfers`);
         
-        if (imageNumber == "5") {
+        if (imageNumber == 5) {
             $('#methodImage').attr('src', 'images/5 Stamp - 96 to 96.png');
         }
-        else if (imageNumber == "4") {
+        else if (imageNumber == 4) {
             $('#methodImage').attr('src', 'images/4 Stamp - 96 to 96.png');
         }
-        else if (imageNumber == "3") {
+        else if (imageNumber == 3) {
             $('#methodImage').attr('src', 'images/3 Stamp - 96 to 96.png');
         }
-        else if (imageNumber == "2") {
+        else if (imageNumber == 2) {
             $('#methodImage').attr('src', 'images/2 Stamp - 96 to 96.png');
         }
-        else if (imageNumber == "1") {
+        else if (imageNumber == 1) {
             $('#methodImage').attr('src', 'images/1 Stamp - 96 to 96.png');
         }
     });
+    
 
     // Validate the stamp volume based on the labware, source well volume, and number of unique stamps
     $('#stampVol, #srcWellVolume').on('change', function() {
