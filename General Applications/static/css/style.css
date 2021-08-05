@@ -1,0 +1,65 @@
+.jumbotron {
+    background-repeat: no-repeat;
+}
+
+#back-button {
+    position:absolute; top:5px; left:5px;}
+
+.h1 {
+    font-size: 2vw;
+    text-align: center;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbotron.text-center.method {
+    background-color: white;
+}
+
+.btn {
+    background-color: #d0e0e3ff;
+}
+
+#methodButtonContainer {
+    text-align: center;
+}
+
+hr.divider {
+    border: 2px solid darkgray;
+    border-radius: 4px;
+}
+
+input, select {
+    width: 250px;
+    height: 25px;
+    margin: 2px;
+    text-align: center;
+    text-align-last: center;
+    align-items: center;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tablink {
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+input::-webkit-file-upload-button {
+    background-color: peru;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: gray; 
+    border-color: black;
+    color: white;
+}
+
+button {
+    margin:0 auto;
+    display:block;
+}
