@@ -18,8 +18,8 @@
     <div class="jumbotron text-center">
         <!-- Back Button -->
         <div id="buttonmenu">
-            <a href="javascript:history.back()" class="btn btn-default" id="back-button">
-                <span>Back</span>
+            <a href="javascript:history.back()" class="btn btn-default btn-lg" id="back-button">
+                <span><strong>Back</strong></span>
             </a>
         </div>
         <h1 class="display-4">Stamp 96-to-96</h1>
@@ -113,8 +113,8 @@
     
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <label id="numStamps">Number of Unique Stamps<br>
-                                <select name="numStamps" BFXName="Let.numStamps" id=dropdown>
+                            <label id="numTransfers">Number of Unique Transfers<br>
+                                <select name="numTransfers" BFXName="Let.numTransfers" id=dropdown>
                                     <Option value=1>1</Option>
                                     <Option value=2>2</Option>
                                     <Option value=3>3</Option>
@@ -125,8 +125,8 @@
                         </li>
     
                         <li class="list-group-item">
-                            <label id="stampVol">Transfer Volume (uL)<br>
-                                <input type="text" style="text-align: center;" name="sourceType" BFXName="Let.stampVol"
+                            <label id="transferVol">Transfer Volume (uL)<br>
+                                <input type="text" style="text-align: center;" name="sourceType" BFXName="Let.transferVol"
                                     value=0 min=0 max=2000>
                                 </input>
                             </label>
@@ -169,7 +169,6 @@
                             <label id="changeTips">Change Tips <small>(new tips for every transfer)</small><br>
                                 <select name="changeTips" BFXName="Let.changeTips" id=changeTips>
                                     <Option selected value="Yes">Yes</Option>
-                                    <Option value="No">No</Option>
                                 </select>
                             </label>
                         </li>

@@ -15,25 +15,23 @@
 
 <body style="background-color: #eeeeee;">
 
-    <header class="sticky-top">
-        <div class="jumbotron text-center" style="background-color: #d0e0e3ff">
-            <h1 class="display-1" style="font-weight: 800; font-size: 5vw;">General Applications</h1>
-            <br>
-            <!-- Add a button to activate General Applications method -->
-            <!-- href="../static/generateCSV.js" -->
-        </div>
-    </header>
+    <div class="jumbotron text-center" style="background-color: #d0e0e3ff">
+        <h1 class="display-1" style="font-weight: 800; font-size: 5vw;">General Applications</h1>
+        <br>
+        <!-- Add a button to activate General Applications method -->
+        <!-- href="../static/generateCSV.js" -->
+    </div>
 
     <!-- Create buttons to filter out different methods -->
+    <!-- data filters are part of each class name with many of the classes having more than one filter -->
     <div class="container" id="methodButtonContainer">
         <button class="btn btn-primary btn-lg filter-button" data-filter="all"> <strong>Show All</strong></button>
         <button class="btn btn-default btn-lg filter-button" data-filter="hitpick"> Hitpick</button>
+        <button class="btn btn-default btn-lg filter-button" data-filter="qtray"> Qtray Plating</button>
         <button class="btn btn-default btn-lg filter-button" data-filter="stamp"> Stamp</button>
         <button class="btn btn-default btn-lg filter-button" data-filter="one-to-many"> One to Many</button>
         <button class="btn btn-default btn-lg filter-button" data-filter="serial-dilution"> Serial Dilution</button>
-        <button class="btn btn-default btn-lg filter-button" data-filter="breakdown"> Breakdown</button>
-        <button class="btn btn-default btn-lg filter-button" data-filter="combination"> Combination</button>
-        <button class="btn btn-secondary btn-lg filter-button" data-filter="multi-channel"> Multi-Channel</button>
+        <button class="btn btn-secondary btn-lg filter-button" data-filter="96-channel"> 96-Channel</button>
         <button class="btn btn-secondary btn-lg filter-button" data-filter="span-8"> Span-8</button>
     </div>
 
@@ -51,10 +49,17 @@
 
         <!-- Hitpick -->
         <div class="row">
-            <div class="col-md-12 filter hitpick span-8">
+            <div class="col-md-6 filter hitpick span-8">
                 <a href="methods/hitpick.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Hitpick</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 filter qtray span-8">
+                <a href="methods/qtray.html" target="_self">
+                    <div class="jumbotron text-center method">
+                        <h2 class="method-name">Qtray Plating</h1>
                     </div>
                 </a>
             </div>
@@ -62,28 +67,28 @@
 
         <!-- Stamp -->
         <div class="row">
-            <div class="col-md-3 filter stamp multi-channel">
+            <div class="col-md-3 filter stamp 96-channel">
                 <a href="methods/stamp96to96.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Stamp 96&#8209;to&#8209;96</span></h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 filter stamp multi-channel">
+            <div class="col-md-3 filter stamp 96-channel">
                 <a href="methods/stampResto96.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Stamp Res&#8209;to&#8209;96</h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 filter stamp multi-channel">
+            <div class="col-md-3 filter stamp 96-channel">
                 <a href="methods/stamp384to384.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Stamp 384&#8209;to&#8209;384</h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 filter stamp multi-channel">
+            <div class="col-md-3 filter stamp 96-channel">
                 <a href="methods/stampResto384.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Stamp Res&#8209;to&#8209;384</h1>
@@ -94,21 +99,21 @@
 
         <!-- One to Many -->
         <div class="row">
-            <div class="col-md-4 filter one-to-many multi-channel">
+            <div class="col-md-4 filter one-to-many 96-channel">
                 <a href="methods/onetomany96to96.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">One to Many 96&#8209;to&#8209;96</span></h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 filter one-to-many multi-channel">
+            <div class="col-md-4 filter one-to-many 96-channel">
                 <a href="methods/onetomanyResto96.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">One to Many Res&#8209;to&#8209;96</h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 filter one-to-many multi-channel">
+            <div class="col-md-4 filter one-to-many 96-channel">
                 <a href="methods/onetomanyResto384.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">One to Many Res&#8209;to&#8209;384</h1>
@@ -119,14 +124,14 @@
 
         <!-- Serial Dilution -->
         <div class="row">
-            <div class="col-md-4 filter serial-dilution multi-channel">
+            <div class="col-md-4 filter serial-dilution 96-channel">
                 <a href="methods/serialdilution96to96.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Serial Dilution 96&#8209;to&#8209;96</span></h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 filter serial-dilution multi-channel">
+            <div class="col-md-4 filter serial-dilution 96-channel">
                 <a href="methods/serialdilutionResto96.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Serial Dilution Res&#8209;to&#8209;96</h1>
@@ -134,7 +139,7 @@
                 </a>
             </div>
             <div class="col-md-4 filter serial-dilution span-8">
-                <a href="methods/serialdilutionResto96.html" target="_self">
+                <a href="methods/serialdilutionIntraPlate.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Serial Dilution Intra&#8209;Plate</h1>
                     </div>
@@ -144,14 +149,14 @@
 
         <!-- Breakdown & Combination-->
         <div class="row">
-            <div class="col-md-6 filter breakdown multi-channel">
+            <div class="col-md-6 filter breakdown 96-channel">
                 <a href="methods/breakdown.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Breakdown 384&#8209;to&#8209;96</span></h1>
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 filter combination multi-channel">
+            <div class="col-md-6 filter combination 96-channel">
                 <a href="methods/combination.html" target="_self">
                     <div class="jumbotron text-center method">
                         <h2 class="method-name">Combination 96&#8209;to&#8209;384</span></h1>

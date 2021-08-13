@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stamp Res-to-96</title>
+    <title>Combination</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <script src='../assets/js/jquery-3.6.0.min.js'></script>
     <script src='../assets/bootstrap/js/bootstrap.min.js'></script>
     <script src="../assets/js/d3.min.js"></script>
+
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                 <span><strong>Back</strong></span>
             </a>
         </div>
-        <h1 class="display-4">Stamp Res-to-96</h1>
+        <h1 class="display-4">Combination</h1>
         <br>
         <button id="startRun" type="button" class="btn btn-primary btn-lg" style="background-color: gray; border-color: black;" type="submit" value="submit">Start Run</button>
         <button id="downloadCSV" type="button" class="btn btn-primary btn-lg" style="background-color: gray; border-color: black;" type="submit" value="submit">Download CSV</button>
@@ -29,8 +30,8 @@
     </div>
 
     <div class="container">
-        <img src="../images/stampResto96/Stamp - Res to 96.png" id="stampResto96image" class="img-fluid center-block" style="max-height: 200px"
-            alt="Stamp Res-to-96">
+        <img src="../images/combination/combination.png" id="combinationImage" class="img-fluid center-block" style="max-height: 200px"
+            alt="Combination">
     </div>
 
     <br>
@@ -63,8 +64,11 @@
                         <li class="list-group-item">
                             <label id="sourceType">Source Plate Type<br>
                                 <select name="sourceType" BFXName="Let.sourceType" id=dropdown>
-                                    <Option value="Res">1 Agilent Deep Reservoir 250mL</Option>
-                                    <Option selected value="Res_low">1 Agilent Shallow Reservoir 80mL</Option>
+                                    <Option value="Deep96C">96 Corning Deep Well 2.0mL</Option>
+                                    <Option selected value="PCR96">96 BioRad PCR Skirted 200uL</Option>
+                                    <Option value="PCR96_rack">96 VWR PCR No-Skirt on Adapter 200uL</Option>
+                                    <Option value="Nunc_96round">96 (Qpix) Nunc Shallow Well 300uL</Option>
+                                    <Option value="BlackClearBottom96Flat">96 Corning Black/Clear Flat Bottom 300uL</Option>
                                 </select>
                             </label>
                         </li>
@@ -72,7 +76,7 @@
                         <li class="list-group-item">
                             <label id="srcWellVolume">Source Well Volume (uL)<br>
                                 <input type="text" style="text-align: center;" name="srcWellVolume" BFXName="Let.srcWellVolume"
-                                    value="80000" min="0" max="250000">
+                                    value="200" min="0" max="2000">
                                 </input>
                             </label>
                         </li>
@@ -80,11 +84,9 @@
                         <li class="list-group-item">
                             <label id="destinationType">Destination Plate Type<br>
                                 <select name="destinationType" BFXName="Let.destinationType" id=dropdown>
-                                    <Option value="Deep96C">96 Corning Deep Well 2.0mL</Option>
-                                    <Option selected value="PCR96">96 BioRad PCR Skirted 200uL</Option>
-                                    <Option value="PCR96_rack">96 VWR PCR No-Skirt on Adapter 200uL</Option>
-                                    <Option value="Nunc_96round">96 (Qpix) Nunc Shallow Well 300uL</Option>
-                                    <Option value="BlackClearBottom96Flat">96 Corning Black/Clear Flat Bottom 300uL</Option>
+                                    <Option selected value="EchoPP">384 Echo 65uL</Option>
+                                    <Option value="EchoLDV">384 Echo Low 22uL</Option>
+                                    <Option value="PCR384">384 BioRad PCR Skirted 40uL</Option>
                                 </select>
                             </label>
                         </li>
@@ -114,8 +116,7 @@
                                     <Option value=1>1</Option>
                                     <Option value=2>2</Option>
                                     <Option value=3>3</Option>
-                                    <Option value=4>4</Option>
-                                    <Option selected value=5>5</Option>
+                                    <Option selected value=4>4</Option>
                                 </select>
                             </label>
                         </li>
@@ -165,6 +166,7 @@
                             <label id="changeTips">Change Tips <small>(new tips for every transfer)</small><br>
                                 <select name="changeTips" BFXName="Let.changeTips" id=changeTips>
                                     <Option selected value="Yes">Yes</Option>
+                                    <Option value="No">No</Option>
                                 </select>
                             </label>
                         </li>
